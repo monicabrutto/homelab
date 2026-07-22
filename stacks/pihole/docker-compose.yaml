@@ -1,0 +1,13 @@
+services: 
+  pihole: 
+    image: pihole/pihole:latest
+    container_name: pihole
+    network_mode: "host"
+    environment: 
+      - TZ=America/New_York
+      - FTLCONF_webserver_api_password=HundredAcrewoodAA
+      - FTLCONF_dns_upstreams=1.1.1.1;1.0.0.1
+      - FTLCONF_webserver_port=8080
+    volumes:
+      - '~/docker/stacks/pihole/etc-pihole:/etc/pihole'
+    restart: unless-stopped

@@ -1,0 +1,8 @@
+services:
+  container: 
+    image: digitalsleuth/autopsy:latest
+    hostname: autopsy 
+    container_name: autopsy
+    networks: 
+      net: 
+
